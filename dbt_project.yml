@@ -1,0 +1,32 @@
+name: allianz_dv
+
+profile: allianz_dv
+
+seed-paths: ["seeds"]
+model-paths: ["models"]
+macro-paths: ["macros"]
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+vars:
+  batch_num: 3
+  use_ldts: true
+
+seeds:
+  allianz_dv:
+    +schema: raw
+
+models:
+  allianz_dv:
+    # Materialize staging models as views, and marts as tables
+    staging:
+      +materialized: view
+      +tags: ["staging"]
+    raw_vault:
+      +schema: RAW_VAULT
+      +materialized: incremental
+    business_vault:
+      +schema: BUSINESS_VAULT
+      +materialized: view
+      +tags: ["business_vault"]

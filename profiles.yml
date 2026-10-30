@@ -1,0 +1,13 @@
+allianz_dv:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      threads: 16
+      account: AWCVPAL-QS49117
+      user: DBT_USER 
+      password: h3l3pl@tt3
+      database: ALLIANZ_DEMO
+      warehouse: WH_ALLIANZ_DBT_DEMO
+      schema: RAW
+      role: DBT_ROLE # PUBLIC is Snowflake's basic role, a dedicated role with only the required permissions is safer for real world workloads.

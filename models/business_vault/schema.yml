@@ -1,0 +1,7 @@
+version: 2
+models:
+  - name: bv_customer_current
+    description: "Latest observed customer attributes; not business-effective as-of reconstruction."
+    columns:
+      - name: customer_id
+        data_tests: [not_null, unique]

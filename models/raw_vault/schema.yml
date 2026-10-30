@@ -1,0 +1,60 @@
+version: 2
+models:
+  - name: hub_customer
+    description: "One immutable row per normalized customer business key."
+    columns:
+      - name: hk_customer
+        description: "SHA256 normalized customer business key."
+        data_tests: [not_null, unique]
+      - name: customer_id
+        data_tests: [not_null, unique]
+  - name: hub_policy
+    description: "One row per policy business key."
+    columns:
+      - name: hk_policy
+        data_tests: [not_null, unique]
+      - name: policy_id
+        data_tests: [not_null, unique]
+  - name: link_customer_policy
+    description: "Unique customer-to-policy relationship."
+    columns:
+      - name: hk_customer_policy
+        data_tests: [not_null, unique]
+      - name: hk_customer
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('hub_customer')
+                field: hk_customer
+      - name: hk_policy
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('hub_policy')
+                field: hk_policy
+  - name: sat_customer
+    description: "Insert-only customer descriptive history ordered by observed load time."
+    columns:
+      - name: sat_event_key
+        data_tests: [not_null, unique]
+      - name: hk_customer
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('hub_customer')
+                field: hk_customer
+  - name: sat_policy
+    description: "Insert-only policy attribute history."
+    columns:
+      - name: sat_event_key
+        data_tests: [not_null, unique]
+      - name: hk_policy
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('hub_policy')
+                field: hk_policy

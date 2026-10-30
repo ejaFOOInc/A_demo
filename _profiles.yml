@@ -1,0 +1,13 @@
+allianz_dv:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      threads: 16
+      authenticator: externalbrowser
+      account: AWCVPAL-QS49117
+      user: ERIC.JANSSENS@FOOINC.BE
+      database: ALLIANZ_DEMO
+      warehouse: WH_ALLIANZ_DBT_DEMO
+      schema: RAW
+      role: ACCOUNTADMIN

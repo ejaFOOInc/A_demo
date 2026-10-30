@@ -1,0 +1,16 @@
+version: 2
+models:
+  - name: stg_customers
+    description: "Cumulative, deduplicated customer events through the selected batch."
+    columns:
+      - name: hk_customer
+        data_tests: [not_null]
+      - name: hashdiff
+        data_tests: [not_null]
+  - name: stg_policies
+    description: "Cumulative, deduplicated policy events through the selected batch."
+    columns:
+      - name: hk_policy
+        data_tests: [not_null]
+      - name: hk_customer_policy
+        data_tests: [not_null]

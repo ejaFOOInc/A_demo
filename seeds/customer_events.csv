@@ -1,0 +1,7 @@
+batch_id,customer_id,customer_name,city,source_event_at,effective_at,ingested_at,record_source
+1,C001,John Smith,Brussels,2026-01-01 08:00:00,2026-01-01 00:00:00,2026-01-01 08:05:00,CRM
+1,C002,Mary Jones,Antwerp,2026-01-01 08:00:00,2026-01-01 00:00:00,2026-01-01 08:05:00,CRM
+1,C001,John Smith,Brussels,2026-01-01 08:00:00,2026-01-01 00:00:00,2026-01-01 08:05:00,CRM
+2,C001,John Smith,Ghent,2026-01-15 08:00:00,2026-01-15 00:00:00,2026-01-15 08:05:00,CRM
+3,C003,Alex Lee,Liege,2026-01-18 08:00:00,2026-01-18 00:00:00,2026-01-18 08:05:00,CRM
+4,C001,John Smith,Bruges,2026-01-20 08:00:00,2026-01-10 00:00:00,2026-01-20 08:05:00,CRM

@@ -1,0 +1,17 @@
+version: 2
+sources:
+  - name: raw
+    database: ALLIANZ_DEMO
+    schema: RAW
+    description: "Synthetic insurance events loaded using dbt seed."
+    tables:
+      - name: customer_events
+        columns:
+          - name: customer_id
+            data_tests: [not_null]
+      - name: policy_events
+        columns:
+          - name: policy_id
+            data_tests: [not_null]
+          - name: customer_id
+            data_tests: [not_null]
