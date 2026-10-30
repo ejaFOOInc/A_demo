@@ -30,3 +30,7 @@ models:
       +schema: BUSINESS_VAULT
       +materialized: view
       +tags: ["business_vault"]
+      pit:
+        +schema: BUSINESS_VAULT
+        +materialized: table
+        +tags: ["pit"] 

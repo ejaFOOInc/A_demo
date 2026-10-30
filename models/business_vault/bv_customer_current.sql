@@ -1,4 +1,5 @@
 select
+    h.hk_customer,
     h.customer_id,
     s.customer_name,
     s.city,
