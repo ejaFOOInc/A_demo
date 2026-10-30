@@ -10,7 +10,7 @@ clean-targets:
   - "dbt_packages"
 
 vars:
-  batch_num: 3
+  batch_num: 1
   use_ldts: true
 
 seeds:
